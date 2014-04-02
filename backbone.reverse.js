@@ -34,7 +34,7 @@ define(['backbone', 'underscore'], function(Backbone, _) {
         options = options || {};
         var prefix = options.prefix || '';
         _.find(possibleHandlers, function(handler) {
-            url = prefix + Backbone.history.root + handler.routeStr;
+            url = Backbone.history.root + prefix + handler.routeStr;
             match = true;
             _.each(params, function(val, key) {
                 if (url.indexOf(':'+key)===-1 && url.indexOf('*'+key)===-1) {
